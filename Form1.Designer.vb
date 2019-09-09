@@ -41,34 +41,36 @@ Partial Class frmMain
         '
         'cmsClipClear
         '
+        Me.cmsClipClear.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.cmsClipClear.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClearClipboardToolStripMenuItem, Me.ToolStripMenuItem1, Me.ExitToolStripMenuItem})
         Me.cmsClipClear.Name = "cmsClipClear"
-        Me.cmsClipClear.Size = New System.Drawing.Size(181, 76)
+        Me.cmsClipClear.Size = New System.Drawing.Size(207, 74)
         '
         'ClearClipboardToolStripMenuItem
         '
         Me.ClearClipboardToolStripMenuItem.Name = "ClearClipboardToolStripMenuItem"
-        Me.ClearClipboardToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ClearClipboardToolStripMenuItem.Size = New System.Drawing.Size(206, 32)
         Me.ClearClipboardToolStripMenuItem.Text = "Clear Clipboard"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(203, 6)
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(206, 32)
         Me.ExitToolStripMenuItem.Text = "E&xit"
         '
         'frmMain
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(281, 163)
+        Me.ClientSize = New System.Drawing.Size(422, 251)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "frmMain"
         Me.ShowInTaskbar = False
         Me.Text = "ClipClear"
