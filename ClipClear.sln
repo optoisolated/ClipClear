@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.106
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ClipClear", "ClipClear\ClipClear.vbproj", "{724CDDD5-02A2-4ACB-A17C-55CDFAB48897}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ClipClear", "ClipClear.vbproj", "{724CDDD5-02A2-4ACB-A17C-55CDFAB48897}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {6968833C-5E6D-432D-BB0F-5FA44057DBFB}
+		SolutionGuid = {B65C1785-92E2-4AF8-B5B2-0AA2069E5A54}
 	EndGlobalSection
 EndGlobal
