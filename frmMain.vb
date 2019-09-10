@@ -60,6 +60,8 @@ Public Class FrmMain
             'Try the clipboard clear. If it works, play the sound (if its enabled)
             Clipboard.Clear()
             If My.Settings.ClearSoundEnabled Then PlaySwishSound()
+            frmNotify.Dispose()
+            frmNotify.Show()
         Catch
             'This is unlikely to ever be called, but just in case... 
             MsgBox("Error clearing clipboard.", vbOKOnly & vbCritical, My.Settings.AppFriendlyName + appVersion)
