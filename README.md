@@ -12,6 +12,6 @@ Double click on the Icon to clear the clipboard contents.
 * Automatically start with Windows User Login
 * Timer based clipboard clearing (purge clipboard if an item has been present for > 10 seconds, for example.
 * Help and options
-* Customisable and/or mutable sound.
+* ~~Customisable and/or mutable sound.~~ - Added in 0.2.1
 * Automatic updates
 * Customisable Icon (or one that works better with dark mode taskbars
