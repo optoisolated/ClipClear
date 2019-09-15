@@ -1,9 +1,26 @@
-﻿Imports System.IO
+﻿Imports System.ComponentModel
+Imports System.IO
+Imports System.Runtime.InteropServices
 
 Public Class FrmMain
     Public appVersion As String
     Public RecycleSoundPath As String
     Public DefaultSound As String
+
+    Public Const MOD_ALT As Integer = &H1 'Alt key
+    Public Const MOD_CTRL As Integer = &H2 'CTRL key
+    Public Const MOD_SHIFT As Integer = &H4 'Shift Key
+    Public Const MOD_WIN As Integer = &H8 'WIN key
+
+    Public Const WM_HOTKEY As Integer = &H312
+
+    <DllImport("User32.dll")>
+    Public Shared Function RegisterHotKey(ByVal hwnd As IntPtr, ByVal id As Integer, ByVal fsModifiers As Integer, ByVal vk As Integer) As Integer
+    End Function
+    <DllImport("User32.dll")>
+    Public Shared Function UnregisterHotKey(ByVal hwnd As IntPtr, ByVal id As Integer) As Integer
+    End Function
+
 
     Private Sub ClearClipboardToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClearClipboardToolStripMenuItem.Click
         'Chose the Clear Clipboard menu item, lear the Clipboard
@@ -18,9 +35,12 @@ Public Class FrmMain
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Visible = False
 
+        'Register Hotkey
+        RegisterHotKey(Me.Handle, 100, MOD_ALT + MOD_CTRL, Keys.W)
+
         'Get the current build version and put it in a clean format
         With My.Application.Info.Version
-            appVersion = String.Format(" v{0}.{1}.{2}", .Major, .Minor, .Build)
+            appVersion = String.Format(" v{0}.{1}.{2}", .Major, .Minor, .Revision)
         End With
 
         'Set up the text captions
@@ -90,5 +110,25 @@ Public Class FrmMain
         My.Settings.AltSoundPath = ""
         RecycleSoundPath = DefaultSound
         My.Settings.Save()
+    End Sub
+
+    Private Sub FrmMain_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+        UnregisterHotKey(Me.Handle, 100)
+    End Sub
+
+    Protected Overrides Sub WndProc(ByRef m As System.Windows.Forms.Message)
+        If m.Msg = WM_HOTKEY Then
+            Dim id As IntPtr = m.WParam
+            Select Case (id.ToString)
+                Case "100"
+                    'Hotkey Pressed, Clear Clipboard
+                    DoClipClear()
+            End Select
+        End If
+        MyBase.WndProc(m)
+    End Sub
+
+    Private Sub CmsClipClear_Opening(sender As Object, e As CancelEventArgs) Handles CmsClipClear.Opening
+
     End Sub
 End Class

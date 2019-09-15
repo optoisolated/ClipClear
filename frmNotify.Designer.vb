@@ -59,6 +59,7 @@ Partial Class frmNotify
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.Text = "frmNotify"
+        Me.TopMost = True
         Me.TransparencyKey = System.Drawing.Color.DimGray
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

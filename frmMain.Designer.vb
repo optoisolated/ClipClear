@@ -28,14 +28,17 @@ Partial Class FrmMain
         Me.CmsClipClear = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ClearClipboardToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.SoundToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SelectCustomSoundToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.OFSound = New System.Windows.Forms.OpenFileDialog()
         Me.tsmiUseDefault = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.SelectCustomSoundToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OFSound = New System.Windows.Forms.OpenFileDialog()
+        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.EnableHotkeyCTRLALTWToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ChangeHotkeyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CmsClipClear.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -64,51 +67,72 @@ Partial Class FrmMain
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
         Me.ToolStripMenuItem1.Size = New System.Drawing.Size(237, 6)
         '
-        'ExitToolStripMenuItem
-        '
-        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(240, 32)
-        Me.ExitToolStripMenuItem.Text = "E&xit"
-        '
         'ToolStripMenuItem2
         '
-        Me.ToolStripMenuItem2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SoundToolStripMenuItem, Me.tsmiUseDefault, Me.ToolStripSeparator2, Me.SelectCustomSoundToolStripMenuItem})
+        Me.ToolStripMenuItem2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SoundToolStripMenuItem, Me.tsmiUseDefault, Me.ToolStripSeparator2, Me.SelectCustomSoundToolStripMenuItem, Me.ToolStripMenuItem3, Me.EnableHotkeyCTRLALTWToolStripMenuItem, Me.ChangeHotkeyToolStripMenuItem})
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
         Me.ToolStripMenuItem2.Size = New System.Drawing.Size(240, 32)
         Me.ToolStripMenuItem2.Text = "Options"
+        '
+        'SoundToolStripMenuItem
+        '
+        Me.SoundToolStripMenuItem.Name = "SoundToolStripMenuItem"
+        Me.SoundToolStripMenuItem.Size = New System.Drawing.Size(351, 34)
+        Me.SoundToolStripMenuItem.Text = "Sound Enabled"
+        '
+        'tsmiUseDefault
+        '
+        Me.tsmiUseDefault.Name = "tsmiUseDefault"
+        Me.tsmiUseDefault.Size = New System.Drawing.Size(351, 34)
+        Me.tsmiUseDefault.Text = "Use Default Sound"
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(348, 6)
+        '
+        'SelectCustomSoundToolStripMenuItem
+        '
+        Me.SelectCustomSoundToolStripMenuItem.Name = "SelectCustomSoundToolStripMenuItem"
+        Me.SelectCustomSoundToolStripMenuItem.Size = New System.Drawing.Size(351, 34)
+        Me.SelectCustomSoundToolStripMenuItem.Text = "Change Sound..."
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
         Me.ToolStripSeparator1.Size = New System.Drawing.Size(237, 6)
         '
-        'SoundToolStripMenuItem
+        'ExitToolStripMenuItem
         '
-        Me.SoundToolStripMenuItem.Name = "SoundToolStripMenuItem"
-        Me.SoundToolStripMenuItem.Size = New System.Drawing.Size(296, 34)
-        Me.SoundToolStripMenuItem.Text = "Sound Enabled"
-        '
-        'SelectCustomSoundToolStripMenuItem
-        '
-        Me.SelectCustomSoundToolStripMenuItem.Name = "SelectCustomSoundToolStripMenuItem"
-        Me.SelectCustomSoundToolStripMenuItem.Size = New System.Drawing.Size(296, 34)
-        Me.SelectCustomSoundToolStripMenuItem.Text = "Select Custom Sound..."
-        '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(293, 6)
+        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(240, 32)
+        Me.ExitToolStripMenuItem.Text = "E&xit"
         '
         'OFSound
         '
         Me.OFSound.AddExtension = False
         Me.OFSound.Title = "Select Sound File"
         '
-        'tsmiUseDefault
+        'ToolStripMenuItem3
         '
-        Me.tsmiUseDefault.Name = "tsmiUseDefault"
-        Me.tsmiUseDefault.Size = New System.Drawing.Size(296, 34)
-        Me.tsmiUseDefault.Text = "Use Default Sound"
+        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(348, 6)
+        '
+        'EnableHotkeyCTRLALTWToolStripMenuItem
+        '
+        Me.EnableHotkeyCTRLALTWToolStripMenuItem.Checked = True
+        Me.EnableHotkeyCTRLALTWToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.EnableHotkeyCTRLALTWToolStripMenuItem.Enabled = False
+        Me.EnableHotkeyCTRLALTWToolStripMenuItem.Name = "EnableHotkeyCTRLALTWToolStripMenuItem"
+        Me.EnableHotkeyCTRLALTWToolStripMenuItem.Size = New System.Drawing.Size(351, 34)
+        Me.EnableHotkeyCTRLALTWToolStripMenuItem.Text = "Enable Hotkey (CTRL+ALT+W)"
+        '
+        'ChangeHotkeyToolStripMenuItem
+        '
+        Me.ChangeHotkeyToolStripMenuItem.Enabled = False
+        Me.ChangeHotkeyToolStripMenuItem.Name = "ChangeHotkeyToolStripMenuItem"
+        Me.ChangeHotkeyToolStripMenuItem.Size = New System.Drawing.Size(351, 34)
+        Me.ChangeHotkeyToolStripMenuItem.Text = "Change Hotkey"
         '
         'FrmMain
         '
@@ -139,4 +163,7 @@ Partial Class FrmMain
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
     Friend WithEvents OFSound As OpenFileDialog
     Friend WithEvents tsmiUseDefault As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem3 As ToolStripSeparator
+    Friend WithEvents EnableHotkeyCTRLALTWToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ChangeHotkeyToolStripMenuItem As ToolStripMenuItem
 End Class
