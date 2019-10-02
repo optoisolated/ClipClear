@@ -62,6 +62,14 @@ Public Class FrmMain
             tsmiUseDefault.Enabled = True
         End If
 
+        'Set Start with Windows flag
+        If My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run", "ClipClear", Nothing) Is Nothing Then
+            mnuStartatLogon.Checked = False
+        Else
+            mnuStartatLogon.Checked = True
+        End If
+
+
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
@@ -130,5 +138,24 @@ Public Class FrmMain
 
     Private Sub CmsClipClear_Opening(sender As Object, e As CancelEventArgs) Handles CmsClipClear.Opening
 
+    End Sub
+
+    Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
+
+    End Sub
+
+    Private Sub StartAtLogonToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles mnuStartatLogon.Click
+        'Check if the key is in the regisry, if it is, it starts at logon, so remove the key
+        With My.Computer.Registry
+            If .GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run", "ClipClear", Nothing) Is Nothing Then
+                'Not present, add it
+                .SetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run", "ClipClear", My.Application.Info.DirectoryPath & "\ClipClear.exe")
+                mnuStartatLogon.Checked = True
+            Else
+                'Present, Remove it
+                .CurrentUser.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Run\", True).DeleteValue("ClipClear")
+                mnuStartatLogon.Checked = False
+            End If
+        End With
     End Sub
 End Class
