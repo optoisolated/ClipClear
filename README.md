@@ -9,7 +9,7 @@ Simply run the ClipClear.exe file and it will create an icon in the notification
 Double click on the Icon to clear the clipboard contents. 
 
 ## Features to Add
-* Automatically start with Windows User Login
+* ~~Automatically start with Windows User Login~~ Added as of 0.2.9.
 * Timer based clipboard clearing (purge clipboard if an item has been present for > 10 seconds, for example.
 * Help and options
 * ~~Customisable and/or mutable sound.~~ - Added in 0.2.1
